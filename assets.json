@@ -1,0 +1,75 @@
+{
+  "$schema": "./assets.schema.json",
+  "chain_name": "bitbadges",
+  "assets": [
+    {
+      "chain_name": "bitbadges",
+      "base_denom": "ubadge",
+      "path": "transfer/channel-0/ubadge",
+      "osmosis_verified": true,
+      "osmosis_unstable": false,
+      "osmosis_disabled": false,
+      "is_alloyed": false,
+      "osmosis_unlisted": false,
+      "osmosis_validated": true,
+      "listing_date_time_utc": "2024-01-01T00:00:00Z",
+      "categories": ["defi", "built_on_osmosis"],
+      "override_properties": {
+        "symbol": "BADGE",
+        "name": "BitBadges Token",
+        "coingecko_id": "bitbadges",
+        "logo_URIs": {
+          "png": "https://raw.githubusercontent.com/cosmos/chain-registry/master/bitbadges/images/badge.png",
+          "svg": "https://raw.githubusercontent.com/cosmos/chain-registry/master/bitbadges/images/badge.svg"
+        }
+      },
+      "_comment": "BitBadges $BADGE"
+    },
+    {
+      "chain_name": "cosmoshub",
+      "base_denom": "uatom",
+      "path": "transfer/channel-1/uatom",
+      "osmosis_verified": true,
+      "osmosis_unstable": false,
+      "osmosis_disabled": false,
+      "is_alloyed": false,
+      "osmosis_unlisted": false,
+      "osmosis_validated": true,
+      "listing_date_time_utc": "2024-01-01T00:00:00Z",
+      "categories": ["defi"],
+      "override_properties": {
+        "symbol": "ATOM",
+        "name": "Cosmos",
+        "coingecko_id": "cosmos",
+        "logo_URIs": {
+          "png": "https://raw.githubusercontent.com/cosmos/chain-registry/master/cosmoshub/images/atom.png",
+          "svg": "https://raw.githubusercontent.com/cosmos/chain-registry/master/cosmoshub/images/atom.svg"
+        }
+      },
+      "_comment": "Cosmos Hub $ATOM"
+    },
+    {
+      "chain_name": "osmosis",
+      "base_denom": "uosmo",
+      "path": "transfer/channel-2/uosmo",
+      "osmosis_verified": true,
+      "osmosis_unstable": false,
+      "osmosis_disabled": false,
+      "is_alloyed": false,
+      "osmosis_unlisted": false,
+      "osmosis_validated": true,
+      "listing_date_time_utc": "2024-01-01T00:00:00Z",
+      "categories": ["defi", "built_on_osmosis"],
+      "override_properties": {
+        "symbol": "OSMO",
+        "name": "Osmosis",
+        "coingecko_id": "osmosis",
+        "logo_URIs": {
+          "png": "https://raw.githubusercontent.com/cosmos/chain-registry/master/osmosis/images/osmo.png",
+          "svg": "https://raw.githubusercontent.com/cosmos/chain-registry/master/osmosis/images/osmo.svg"
+        }
+      },
+      "_comment": "Osmosis $OSMO"
+    }
+  ]
+} 
