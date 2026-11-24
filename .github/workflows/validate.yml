@@ -1,0 +1,49 @@
+name: Validate Asset Registry
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate package.json and assets.json schema
+        run: |
+          node -e "
+            const fs = require('fs');
+            const Ajv = require('ajv');
+            const addFormats = require('ajv-formats');
+            JSON.parse(fs.readFileSync('package.json', 'utf8'));
+            const schema = JSON.parse(fs.readFileSync('assets.schema.json', 'utf8'));
+            const data = JSON.parse(fs.readFileSync('assets.json', 'utf8'));
+            const ajv = new Ajv({ allErrors: true, strict: false, validateSchema: false });
+            addFormats(ajv);
+            delete schema.\$schema;
+            const { \$schema, ...dataToValidate } = data;
+            const validate = ajv.compile(schema);
+            if (!validate(dataToValidate)) {
+              console.error('Schema validation failed:', validate.errors);
+              process.exit(1);
+            }
+            console.log('package.json and assets.json are valid.');
+          "
