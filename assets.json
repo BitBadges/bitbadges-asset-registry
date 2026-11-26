@@ -1,7 +1,31 @@
 {
-  "$schema": "../assets.schema.json",
   "chain_name": "bitbadges",
   "assets": [
-   
+    {
+      "description": "The native token of BitBadges",
+      "denom_units": [
+        {
+          "denom": "abadge",
+          "exponent": 0
+        },
+        {
+          "denom": "badge",
+          "exponent": 18
+        }
+      ],
+      "type_asset": "sdk.coin",
+      "base": "abadge",
+      "name": "BitBadges",
+      "display": "badge",
+      "symbol": "BADGE",
+      "logo_URIs": {
+        "png": "https://raw.githubusercontent.com/cosmos/chain-registry/master/bitbadges/images/badge_logo.png"
+      },
+      "images": [
+        {
+          "png": "https://raw.githubusercontent.com/cosmos/chain-registry/master/bitbadges/images/badge_logo.png"
+        }
+      ]
+    }
   ]
 }

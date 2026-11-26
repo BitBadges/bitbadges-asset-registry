@@ -81,7 +81,7 @@ const registry: AssetRegistry = {
   assets: [
     {
       chain_name: 'bitbadges',
-      base_denom: 'ubadge',
+      base_denom: 'abadge',
       categories: ['defi'],
       override_properties: {
         symbol: 'BADGE',
@@ -107,7 +107,7 @@ The asset registry follows the Osmosis Zone List format and includes:
 ### Required Fields for Each Asset
 
 - `chain_name` - The name of the chain as used in the Cosmos Chain Registry
-- `base_denom` - The base denomination (e.g., "ubadge" for BitBadges token)
+- `base_denom` - The base denomination (e.g., "abadge" for BitBadges token)
 
 ### Optional Fields
 
